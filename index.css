@@ -1,0 +1,256 @@
+@keyframes lightMovement {
+    0% {
+      background-position: 50% 50%;
+    }
+    10% {
+      background-position: 45% 55%;
+    }
+    20% {
+      background-position: 40% 60%;
+    }
+    30% {
+      background-position: 35% 65%;
+    }
+    40% {
+      background-position: 40% 70%;
+    }
+    50% {
+      background-position: 45% 65%;
+    }
+    60% {
+      background-position: 50% 60%;
+    }
+    70% {
+      background-position: 55% 65%;
+    }
+    80% {
+      background-position: 60% 60%;
+    }
+    90% {
+      background-position: 65% 55%;
+    }
+    100% {
+      background-position: 50% 50%;
+    }
+  }
+  
+body {
+    background: radial-gradient(circle, rgba(2, 32, 91, 0.9) 0%, rgba(27, 62, 121, 0.8) 30%, rgba(95, 118, 157, 0.7) 60%, rgba(139, 152, 190, 0.6) 100%);
+
+    height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+    color: #fff;
+    animation: lightMovement 10s infinite;
+    background-size: 150%;
+}
+  
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    height: 90vh;
+}
+  
+.column {
+    flex: 1;
+    padding: 20px;
+    height: 80%;
+}
+
+h1 {
+    margin: 0;
+    font-size: 3em;
+}
+  
+p {
+    font-size: 1.5em;
+}
+  
+textarea {
+    width: 400px; 
+    height: 80%; 
+    background-color: #fefefe;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: none;
+    resize: none; 
+    
+    font-size: xx-large;
+    font-family: sans-serif;
+}
+
+.card{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #68686891;
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    padding: 16px; 
+    margin: 10%; 
+    
+}
+
+#copy{
+    margin: auto;
+    padding: 5% 0;
+}
+
+button{
+    border: 1px solid #0A3871;
+    border-radius: 10px;
+    width: 200px;
+    
+    margin: 5px auto;
+    padding: 10px 0;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+}
+
+.buttons{
+    display: flex;
+    margin-top: 5%;
+    width: 100%;
+    height: 10%;
+}
+
+
+.animar-svg {
+    transition: transform 1s ease;
+  }
+  
+  .animar-svg.girar-izquierda {
+    transform: rotate(-90deg);
+  }
+  
+  .animar-svg.girar-derecha {
+    transform: rotate(90deg);
+  }
+  
+  .animar-svg.girar-derecha-dos {
+    transform: rotate(180deg);
+  }
+  
+  .animar-svg.girar-inicial {
+    transform: rotate(0deg);
+  }
+
+
+/* Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 767px) {
+  body {
+      background-size: 200%; 
+  }
+
+  #lock {
+    display: none; 
+  }
+
+  h1 {
+      font-size: 2em;
+      text-align: center;
+      padding: 0 10px;
+  }
+
+  .container {
+      flex-direction: column;
+      height: auto;
+      padding: 20px;
+  }
+
+  .column {
+      width: 100%;
+      margin-bottom: 20px;
+  }
+
+  textarea {
+      width: 100%;
+      font-size: large;
+  }
+
+  button {
+      width: 100%;
+  }
+
+  .buttons {
+      flex-direction: column;
+      width: 100%;
+  }
+
+  .card {
+      width: 100%;
+      margin: 20px 0;
+      padding: 10px;
+  }
+}
+
+/* Estilos para tabletas */
+@media (min-width: 768px) and (max-width: 1024px) {
+  body {
+      background-size: 175%; 
+  }
+
+  h1 {
+      font-size: 2.5em;
+  }
+
+  .container {
+      flex-direction: column;
+      height: auto;
+      padding: 20px;
+  }
+
+  .column {
+      width: 100%;
+      margin-bottom: 20px;
+  }
+
+  textarea {
+      width: 100%;
+      font-size: large;
+  }
+
+  button {
+      width: 100%;
+  }
+
+  .buttons {
+      flex-direction: column;
+      width: 100%;
+  }
+
+  .card {
+      width: 100%;
+      margin: 20px 0;
+      padding: 10px;
+  }
+  #lock {
+    display: none; /* Oculta imagen del candado */
+}
+}
+
+/* Estilos para pantallas grandes (escritorio) */
+@media (min-width: 1025px) {
+  
+  textarea {
+      width: 400px;
+      font-size: xx-large;
+  }
+
+  button {
+      width: 200px;
+  }
+
+  .card {
+      margin: 10%;
+  }
+
+
+}

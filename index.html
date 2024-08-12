@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <header>
+        <div style=" position: absolute; margin-top: 10px;">
+            <img src="aluraLogo.svg" alt="">
+        </div>
+    </header>
+
+    <main style="padding-top: 10px;">
+        <h1 style="display: flex;justify-content: center;" > Encriptador de Texto</h1>
+        <img style="position: fixed; margin-top: 75vh; margin-left: 47vw;" id="lock" src="seguro.svg">
+
+        <div class="container">
+        
+            <div class="column card">
+              <textarea id="inputTextArea" rows="4" cols="50" placeholder="Ingrese aquí el texto"></textarea>
+              <div class="buttons">
+                <button id="button_encrypt" onclick="encrypt()">Encriptar</button>
+                <button id="button_desencrypt" onclick="desencrypt()">Desencriptar</button>
+              </div>
+              <button id="clear">Limpiar</button>
+            </div>
+        
+            <div class="column card">
+                <textarea id="outputTextArea" readonly rows="4" cols="50"></textarea>
+                <button id="copy" onclick="copy()">Copiar</button>  
+            </div>
+          </div>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>

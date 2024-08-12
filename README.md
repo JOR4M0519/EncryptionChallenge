@@ -16,11 +16,14 @@ Proyecto simple de encriptador y desencriptador de texto que convierte vocales e
 ## Instalación
 
 1. Clona el repositorio:
-
    ```bash
    git clone https://github.com/tu-usuario/encriptador-de-texto.git
-
-  cd encriptador-de-texto
+2. Navega al directorio del proyecto
+   ```bash
+   cd encriptador-de-texto
+4. Abre el archivo index.html en tu navegador web:
+   ```bash
+   open index.html
 
 ## Uso
 

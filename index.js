@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         outputTextArea.select();
         outputTextArea.setSelectionRange(0, 99999); // Para dispositivos móviles
 
-        // Intenta copiar el contenido al portapapeles
+        // copia el contenido al portapapeles
         try {
             document.execCommand('copy');
             alert('Texto copiado al portapapeles!');
@@ -37,6 +37,14 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 });
 
+function validarTexto(text) {
+    const regex = /^[a-z ]*$/;
+
+    if (!regex.test(text)) return false;
+    
+    return true;
+}
+
 function getByValue(map, searchValue) {
     for (let [key, value] of map.entries()) {
         if (value === searchValue) {
@@ -49,8 +57,11 @@ function getByValue(map, searchValue) {
 function desencrypt(){
     time = 200;
     animarLock(time);
-        let text = document.getElementById("inputTextArea").value;
-            
+    let text = document.getElementById("inputTextArea").value.toLowerCase();
+    if(!validarTexto(text)) {
+        alert("Carácteres invalidos")
+        return
+    }         
     // Reemplazar secuencias encriptadas por las vocales originales
     // Ordenar las secuencias encriptadas por longitud descendente para evitar problemas de sustitución parcial
     const sortedValues = Array.from(cryptDictionary.values()).sort((a, b) => b.length - a.length);
@@ -70,7 +81,11 @@ function encrypt(){
     time = 200;
     animarLock(time);
     let text = (document.getElementById("inputTextArea").value).toLowerCase();
-        text = text.replace(/[aeiou]/g, letra => cryptDictionary.get(letra));
+    if(!validarTexto(text)) {
+        alert("Carácteres invalidos")
+        return
+    } 
+    text = text.replace(/[aeiou]/g, letra => cryptDictionary.get(letra));
     setTimeout(() => {
         document.getElementById("outputTextArea").value = text;
     },time+100)    
